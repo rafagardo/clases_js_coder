@@ -101,10 +101,6 @@ resta(18, 9);
 
 /*
 *
-
-*
-*/
-
 const resta = (a,b) => a-b; // ademas tiene un return implicito (se quitan llaves y la palabra return)
 
 const suma = function(a,b){
@@ -124,6 +120,9 @@ console.log(precioProducto2);
 
 const precioProducto3 = calculoIva(resta(30, 10));
 console.log(precioProducto3);
+*
+*/
+
 
 /* =====================================
 =               EJEMPLO PARA PRIMER ENTREGA                =
@@ -131,17 +130,13 @@ console.log(precioProducto3);
 
 /*
 *
-
-*
-*/
-
 const aplicarDescuento = (precio, descuento) => {
     const precioConDescuento = precio - (precio * descuento) / 100;
     return precioConDescuento;
 }
 
 const calcularImpuestos = (precio) => {
-    precioConImpuestos = precio * 0.16;
+    precioConImpuestos = precio + precio * 0.16;
     return precioConImpuestos;
 }
 
@@ -151,7 +146,7 @@ let agregar = confirm("Quieres agregar un producto?");
 while(agregar){
     let precioDelProducto = parseFloat(prompt("Por favor ingresa el precio del producto"));
     
-    if(!isNaN(precioDelProducto)){
+    if(!isNaN(precioDelProducto) && precioDelProducto > 0){
         const precioConIva = calcularImpuestos(precioDelProducto);
         totalDeProductos += precioConIva;
         alert("Producto agregado exitosamente");
@@ -165,4 +160,10 @@ if(totalDeProductos > 0){
     let descuento =  parseFloat(prompt("Ingresa el monto de descuento"));
     const precioFinal = aplicarDescuento(totalDeProductos, descuento);
     alert(`El monto final de la compra es de ${precioFinal}`)
+} else {
+    alert("No has agregado ingun producto")
 }
+
+*
+*/
+
