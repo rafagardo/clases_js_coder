@@ -47,7 +47,19 @@ const producto = {
 
 // localStorage.setItem("producto", producto);
 
+/* =====================================
+=           JSON.stringify()            =
+===================================== */
+
+
 const objetoAJSON = JSON.stringify(producto);
 console.log(objetoAJSON);
 
 localStorage.setItem("producto", objetoAJSON);
+
+/* =====================================
+=               JSON.parse()                =
+===================================== */
+
+const producto1 = JSON.parse(localStorage.getItem("producto1"));
+console.log(producto1);
