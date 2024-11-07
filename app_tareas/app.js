@@ -31,7 +31,7 @@ const tareasPendientes = document.getElementById("tareasPendientes");
 
 const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
 
-let proximoId = 1;
+let proximoId = tareas.length > 0 ? tareas[tareas.length - 1].id + 1 : 1;
 
 const renderizarTareas = () => {
     listadoTareas.innerHTML = "";
@@ -75,7 +75,7 @@ const agregarTareas = () => {
     const prioridad = prioridadTarea.value;
     const vencimiento = fechaVencimiento.value;
 
-    if (nombre && prioridad && vencimiento) {
+    /* if (nombre && prioridad && vencimiento) {
         tareas.push(
             {
                 id: proximoId++,
@@ -90,13 +90,25 @@ const agregarTareas = () => {
         renderizarTareas();
     } else {
         alert("Rellena todos los campos");
-    };
+    }; */
+
+    nombre && prioridad && vencimiento ? tareas.push({
+        id: proximoId++,
+        nombre: nombre,
+        prioridad: prioridad,
+        vencimiento: vencimiento,
+        completada: false,
+    }) : alert("Rellena todos los campos");
+
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+    renderizarTareas();
 };
 
 const eliminarTarea = (id) => {
-    const tarea = tareas.findIndex((tarea) => tarea.id === id);
+    const indice = tareas.findIndex((tarea) => tarea.id === id);
     if (indice !== -1) {
         tareas.splice(indice, 1);
+        localStorage.setItem("tareas", JSON.stringify(tareas));
         renderizarTareas();
     };
 };
