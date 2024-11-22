@@ -1,112 +1,112 @@
-// /* =====================================
-// =               SetTimeout                =
-// ===================================== */
-
-// // setTimeout(() => {
-// //     console.log('Hola Mundo');
-// // }, 2000);
-
-// console.log("Inicio del proceso");
+/* =====================================
+=               SetTimeout                =
+===================================== */
 
 // setTimeout(() => {
-//     console.log("Mitad del proceso");
-// }, 3000);
+//     console.log('Hola Mundo');
+// }, 2000);
 
-// console.log("Fin del proceso");
+console.log("Inicio del proceso");
 
-// const btn = document.querySelector('#button');
-// const popup = document.querySelector('#popup-message');
+setTimeout(() => {
+    console.log("Mitad del proceso");
+}, 3000);
 
-// btn.addEventListener('click', () => {
-//     popup.classList.add("popup-active");
-//     setTimeout(() => {
-//         popup.classList.remove("popup-active");
-//     }, 3000);
-// });
+console.log("Fin del proceso");
 
-// for (let letra of "Hola Mundo") {
-//     setTimeout(() => {
-//         console.log(letra);
-//     }, 1000);
-// }
+const btn = document.querySelector('#button');
+const popup = document.querySelector('#popup-message');
 
-// /* =====================================
-// =               Call Stack                =
-// ===================================== */
+btn.addEventListener('click', () => {
+    popup.classList.add("popup-active");
+    setTimeout(() => {
+        popup.classList.remove("popup-active");
+    }, 3000);
+});
 
-// // Es una pila de ejecución de funciones
-// // LIFO Last In First Out
-// // Se ejecuta el último elemento que entra
+for (let letra of "Hola Mundo") {
+    setTimeout(() => {
+        console.log(letra);
+    }, 1000);
+}
 
-// // Ejemplo de Call Stack
-// function funcion1() {
-//     console.log("Funcion 1");
-//     funcion2();
-// }
+/* =====================================
+=               Call Stack                =
+===================================== */
 
-// function funcion2() {
-//     console.log("Funcion 2");
-//     funcion3();
-// }
+// Es una pila de ejecución de funciones
+// LIFO Last In First Out
+// Se ejecuta el último elemento que entra
 
-// function funcion3() {
-//     console.log("Funcion 3");
-// }
+// Ejemplo de Call Stack
+function funcion1() {
+    console.log("Funcion 1");
+    funcion2();
+}
 
-// /* =====================================
-// =               SetInterval                =
-// ===================================== */
+function funcion2() {
+    console.log("Funcion 2");
+    funcion3();
+}
 
-// // Es una función que se ejecuta cada cierto tiempo
-// // setInterval(() => {
-// //     console.log("Hola Mundo");
-// // }, 1000);
+function funcion3() {
+    console.log("Funcion 3");
+}
 
-// let contador = 0;
-// const intervalo = setInterval(() => {
-//     console.log(contador);
-//     contador++;
-//     if (contador === 5) {
-//         clearInterval(intervalo);
-//     }
+/* =====================================
+=               SetInterval                =
+===================================== */
+
+// Es una función que se ejecuta cada cierto tiempo
+// setInterval(() => {
+//     console.log("Hola Mundo");
 // }, 1000);
 
-// /* =====================================
-// =               Promesas                =
-// ===================================== */
+let contador = 0;
+const intervalo = setInterval(() => {
+    console.log(contador);
+    contador++;
+    if (contador === 5) {
+        clearInterval(intervalo);
+    }
+}, 1000);
 
-// // Es un objeto que representa la terminación o el fracaso de una operación asíncrona
-// // Devuelve un valor
-// // Se puede encadenar con then y catch
-// // Se puede encadenar con async y await
-// // Una promesa puede estar en 3 estados: pendiente, cumplida o rechazada
+/* =====================================
+=               Promesas                =
+===================================== */
 
-// // Sintaxis de una promesa
-// // new Promise((resolve, reject) => {
-//      // Código de la promesa
-// //});
+// Es un objeto que representa la terminación o el fracaso de una operación asíncrona
+// Devuelve un valor
+// Se puede encadenar con then y catch
+// Se puede encadenar con async y await
+// Una promesa puede estar en 3 estados: pendiente, cumplida o rechazada
 
-// const eventoFuturo = (respuesta) => {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             respuesta ? resolve("El evento fue exitoso") : reject("El evento no fue exitoso");
-//         }, 2000);
-//     });
-// };
+// Sintaxis de una promesa
+// new Promise((resolve, reject) => {
+     // Código de la promesa
+//});
 
-// eventoFuturo(true).then((res) => {
-//     console.log(res);
-// }).catch((error) => {
-//     console.log(error);
-// });
+const eventoFuturo = (respuesta) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            respuesta ? resolve("El evento fue exitoso") : reject("El evento no fue exitoso");
+        }, 2000);
+    });
+};
 
-// eventoFuturo(false).then((res) => {
-//     console.log(res);
-// }).catch((error) => {
-//     console.log(error);
-// }).finally(() => {
-//     console.log("Proceso terminado");
-// });
+eventoFuturo(true).then((res) => {
+    console.log(res);
+}).catch((error) => {
+    console.log(error);
+});
+
+eventoFuturo(false).then((res) => {
+    console.log(res);
+}).catch((error) => {
+    console.log(error);
+}).finally(() => {
+    console.log("Proceso terminado");
+});
 
 /* =====================================
 =               Ejemplo de consumo de datos                =
