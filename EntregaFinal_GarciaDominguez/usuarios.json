@@ -1,0 +1,20 @@
+[
+    {
+        "nombre": "Juan Perez",
+        "transporte": {
+            "tipo": "coche",
+            "distancia": 120
+        },
+        "consumoHogar": 150,
+        "residuos": 50
+    },
+    {
+        "nombre": "Ana López",
+        "transporte": {
+            "tipo": "bicicleta",
+            "distancia": 30
+        },
+        "consumoHogar": 80,
+        "residuos": 20
+    }
+]
